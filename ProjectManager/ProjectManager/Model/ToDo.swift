@@ -7,23 +7,17 @@
 
 import Foundation
 
-let dummyToDos: [ToDo] = [
-    ToDo(title: "제목 1", description: "asdf", date: "asdf"),
-    ToDo(title: "제목 2", description: "asdf", date: "asdf", status: .doing),
-    ToDo(title: "제목 3", description: "asdf", date: "asdf", status: .done)
-]
-
-enum ToDoStatus {
-    case toDo
-    case doing
-    case done
+enum ToDoStatus: String {
+    case toDo = "ToDo"
+    case doing = "Doing"
+    case done = "Done"
 }
 
 struct ToDo: Identifiable {
     var id = UUID()
-    var title: String
-    var description: String
-    var date: String
+    var title: String = ""
+    var description: String = ""
+    var date: Date = Date()
     var status: ToDoStatus = .toDo
 }
 

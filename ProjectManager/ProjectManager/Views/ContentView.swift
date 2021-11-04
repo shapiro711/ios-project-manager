@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isDetailViewPresented = false
+    @StateObject private var toDoViewModel = ToDoViewModel()
     
     init() {
         UINavigationBar.appearance().backgroundColor = .systemGray5
@@ -17,9 +18,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             HStack(spacing: 10) {
-                ToDoList(isDetailViewPresented: $isDetailViewPresented)
-                ToDoList(isDetailViewPresented: $isDetailViewPresented)
-                ToDoList(isDetailViewPresented: $isDetailViewPresented)
+                ToDoList(column: 0, isDetailViewPresented: $isDetailViewPresented)
+                ToDoList(column: 1, isDetailViewPresented: $isDetailViewPresented)
+                ToDoList(column: 2, isDetailViewPresented: $isDetailViewPresented)
             }
             .background(Color(UIColor.systemGray3))
             .navigationTitle(Text("Project Manager"))
@@ -30,12 +31,13 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "plus")
                 }
-                .sheet(isPresented: $isDetailViewPresented) {
-                    ToDoDetail()
-                }
             })
         }
+        .sheet(isPresented: $isDetailViewPresented) {
+            ToDoDetail(isDetailViewPresented: $isDetailViewPresented)
+        }
         .navigationViewStyle(.stack)
+        .environmentObject(toDoViewModel)
     }
 }
 

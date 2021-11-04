@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct ToDoList: View {
+    let column: Int
     @Binding var isDetailViewPresented: Bool
+    @EnvironmentObject var toDoViewModel: ToDoViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
-            ToDoHeader(headerTitle: "TODO", rowCount: "12")
+            ToDoHeader(headerTitle: toDoViewModel.toDoModel.toDoType[column].rawValue, rowCount: toDoViewModel.toDoModel.toDos[column].count.description)
             
             List {
-                ForEach(dummyToDos) { toDo in
-                    ToDoRow(toDo: toDo)
+                ForEach(Array(toDoViewModel.toDoModel.toDos[column].enumerated()), id: \.element.id) { index, toDo in
+                    ToDoRow(column: column, row: index, toDo: toDo)
                         .onTapGesture {
                             isDetailViewPresented = true
                         }
                 }
                 .onDelete { indexSet in
-                    
+                    toDoViewModel.delete(column: column, indexSet: indexSet)
                 }
             }
             .listStyle(.plain)
@@ -33,6 +35,6 @@ struct ToDoList: View {
 
 struct ToDoList_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoList(isDetailViewPresented: .constant(false))
+        ToDoList(column: 0, isDetailViewPresented: .constant(false))
     }
 }

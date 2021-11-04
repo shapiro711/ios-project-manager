@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ToDoRow: View {
+    let column: Int
+    let row: Int
     let toDo: ToDo
     @State private var isPopoverShown = false
     
@@ -19,7 +21,7 @@ struct ToDoRow: View {
                 Text(toDo.description)
                     .font(.body)
                     .foregroundColor(.gray)
-                Text(toDo.date)
+                Text(toDo.date.description)
                     .font(.caption)
             }
             Spacer()
@@ -28,13 +30,13 @@ struct ToDoRow: View {
             isPopoverShown = true
         }
         .popover(isPresented: $isPopoverShown) {
-            ToDoPopover()
+            ToDoPopover(column: column, row: row, isPopoverShown: $isPopoverShown)
         }
     }
 }
 
 struct ToDoRow_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoRow(toDo: dummyToDos[0])
+        ToDoRow(column: 0, row: 0, toDo: ToDo())
     }
 }

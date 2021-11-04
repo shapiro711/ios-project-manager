@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ToDoDetail: View {
-    @State private var title = ""
-    @State private var date = Date()
-    @State private var description = ""
+    @EnvironmentObject var toDoViewModel: ToDoViewModel
+    @State var toDo = ToDo()
+    @Binding var isDetailViewPresented: Bool
     
     var body: some View {
         VStack {
@@ -24,7 +24,8 @@ struct ToDoDetail: View {
                 Text("TODO")
                 Spacer()
                 Button {
-                    
+                    toDoViewModel.add(toDo)
+                    isDetailViewPresented = false
                 } label: {
                     Text("Done")
                 }
@@ -32,13 +33,13 @@ struct ToDoDetail: View {
             .padding()
             .background(Color(UIColor.systemGray6))
             VStack {
-                TextField("Title", text: $title)
+                TextField("Title", text: $toDo.title)
                     .padding()
                     .background(Color.white.shadow(color: .gray, radius: 3, x: 1, y: 4))
-                DatePicker(selection: $date, label: {})
+                DatePicker(selection: $toDo.date, label: {})
                     .datePickerStyle(.wheel)
                     .labelsHidden()
-                TextEditor(text: $description)
+                TextEditor(text: $toDo.description)
                     .background(Color.white.shadow(color: .gray, radius: 3, x: 1, y: 4))
             }
             .padding()
@@ -48,6 +49,6 @@ struct ToDoDetail: View {
 
 struct ToDoDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoDetail()
+        ToDoDetail(isDetailViewPresented: .constant(true))
     }
 }

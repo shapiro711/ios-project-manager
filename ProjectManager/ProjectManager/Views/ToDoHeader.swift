@@ -15,10 +15,10 @@ struct ToDoHeader: View {
         HStack {
             Text(headerTitle)
                 .font(.largeTitle)
-            Text("12")
+            Text(rowCount)
                 .font(.title3)
                 .foregroundColor(.white)
-                .background(Color.black).clipShape(Circle())
+                .background(Circle().foregroundColor(.black))
             Spacer()
         }
         .padding()
