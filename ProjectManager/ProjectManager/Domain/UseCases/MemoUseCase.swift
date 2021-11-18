@@ -15,15 +15,15 @@ protocol UseCase {
     func fetch(completion: @escaping (Result<[Memo], Error>) -> Void)
 }
 
-struct MemoUseCase: UseCase {
-    private let repository: Repositoryable
+class MemorizeUseCase<Repository: DataModifiableRepository>: UseCase where Repository.Entity == Memo {
+    private let repository: Repository
     
-    init(repository: Repositoryable = MemoRepository()) {
+    init(repository: Repository) {
         self.repository = repository
     }
 
     func add(_ memo: Memo, completion: @escaping Completion) {
-        repository.add(memo: memo) { result in
+        repository.add(memo: memo) { (result: Result<Repository.Entity, Error>) in
             switch result {
             case .success(let memo):
                 completion(.success(memo))
@@ -34,7 +34,7 @@ struct MemoUseCase: UseCase {
     }
     
     func modify(_ memo: Memo, completion: @escaping Completion) {
-        repository.update(memo: memo) { result in
+        repository.update(memo: memo) { (result: Result<Repository.Entity, Error>) in
             switch result {
             case .success(let memo):
                 completion(.success(memo))
@@ -45,7 +45,7 @@ struct MemoUseCase: UseCase {
     }
     
     func delete(_ memo: Memo, completion: @escaping Completion) {
-        repository.delete(memo: memo) { result in
+        repository.delete(memo: memo) { (result: Result<Repository.Entity, Error>) in
             switch result {
             case .success(let memo):
                 completion(.success(memo))
@@ -56,7 +56,7 @@ struct MemoUseCase: UseCase {
     }
     
     func fetch(completion: @escaping (Result<[Memo], Error>) -> Void) {
-        repository.fetch { result in
+        repository.fetch { (result: Result<[Repository.Entity], Error>) in
             switch result {
             case .success(let memos):
                 completion(.success(memos))
@@ -64,5 +64,11 @@ struct MemoUseCase: UseCase {
                 completion(.failure(error))
             }
         }
+    }
+}
+
+final class MemoUseCase: MemorizeUseCase<MemoRepository> {
+    override init(repository: MemoRepository = MemoRepository()) {
+        super.init(repository: repository)
     }
 }

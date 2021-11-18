@@ -10,7 +10,6 @@
 		3F62B92E273A9DD500C024ED /* MemoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62B92D273A9DD500C024ED /* MemoUseCase.swift */; };
 		3F63BC1C273C274C009A6545 /* MemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63BC1B273C274C009A6545 /* MemoRepository.swift */; };
 		3FB2CF012727D5C700272707 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FB2CF002727D5C700272707 /* GoogleService-Info.plist */; };
-		3FC0B44F274146EA0082F27F /* HistoryRepositoryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0B44E274146EA0082F27F /* HistoryRepositoryable.swift */; };
 		3FC0B4512741471D0082F27F /* HistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0B4502741471D0082F27F /* HistoryRepository.swift */; };
 		3FE379502733E2B1000D8247 /* MemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3794F2733E2B1000D8247 /* MemoListViewModel.swift */; };
 		3FFB70B3273E3E2F00146834 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3FFB70B2273E3E2F00146834 /* FirebaseAuth */; };
@@ -29,7 +28,7 @@
 		C9074F78273AC557000A8F61 /* MemoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9074F76273AC557000A8F61 /* MemoEntity+CoreDataClass.swift */; };
 		C9074F79273AC557000A8F61 /* MemoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9074F77273AC557000A8F61 /* MemoEntity+CoreDataProperties.swift */; };
 		C9074F7C273C224B000A8F61 /* MemoStorageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9074F7B273C224B000A8F61 /* MemoStorageable.swift */; };
-		C9074F7F273C231A000A8F61 /* Repositoryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9074F7E273C231A000A8F61 /* Repositoryable.swift */; };
+		C9074F7F273C231A000A8F61 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9074F7E273C231A000A8F61 /* Repository.swift */; };
 		C90881C62733E20A00F99E3C /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90881C52733E20A00F99E3C /* Memo.swift */; };
 		C90881CC2733E21700F99E3C /* MemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90881C72733E21600F99E3C /* MemoList.swift */; };
 		C90881CD2733E21700F99E3C /* MemoPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90881C82733E21600F99E3C /* MemoPopover.swift */; };
@@ -54,7 +53,6 @@
 		3F62B92D273A9DD500C024ED /* MemoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUseCase.swift; sourceTree = "<group>"; };
 		3F63BC1B273C274C009A6545 /* MemoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRepository.swift; sourceTree = "<group>"; };
 		3FB2CF002727D5C700272707 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3FC0B44E274146EA0082F27F /* HistoryRepositoryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRepositoryable.swift; sourceTree = "<group>"; };
 		3FC0B4502741471D0082F27F /* HistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRepository.swift; sourceTree = "<group>"; };
 		3FE3794F2733E2B1000D8247 /* MemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewModel.swift; sourceTree = "<group>"; };
 		3FFB70B9273E406500146834 /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
@@ -72,7 +70,7 @@
 		C9074F76273AC557000A8F61 /* MemoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9074F77273AC557000A8F61 /* MemoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemoEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9074F7B273C224B000A8F61 /* MemoStorageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStorageable.swift; sourceTree = "<group>"; };
-		C9074F7E273C231A000A8F61 /* Repositoryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositoryable.swift; sourceTree = "<group>"; };
+		C9074F7E273C231A000A8F61 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		C90881C52733E20A00F99E3C /* Memo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		C90881C72733E21600F99E3C /* MemoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoList.swift; sourceTree = "<group>"; };
 		C90881C82733E21600F99E3C /* MemoPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoPopover.swift; sourceTree = "<group>"; };
@@ -242,8 +240,7 @@
 		C938B48D27415DF400B40F40 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				C9074F7E273C231A000A8F61 /* Repositoryable.swift */,
-				3FC0B44E274146EA0082F27F /* HistoryRepositoryable.swift */,
+				C9074F7E273C231A000A8F61 /* Repository.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -430,11 +427,10 @@
 				C99516F3273EC4F100710EF9 /* HistoryPopover.swift in Sources */,
 				C90881C62733E20A00F99E3C /* Memo.swift in Sources */,
 				C91273B1273EAA85000EAC4F /* HistoryEntity+Mapping.swift in Sources */,
-				3FC0B44F274146EA0082F27F /* HistoryRepositoryable.swift in Sources */,
 				C9185434273AB24F00B13A0A /* CoreDataStorage.swift in Sources */,
 				C938B4842741457100B40F40 /* HistoryUseCase.swift in Sources */,
 				3FC0B4512741471D0082F27F /* HistoryRepository.swift in Sources */,
-				C9074F7F273C231A000A8F61 /* Repositoryable.swift in Sources */,
+				C9074F7F273C231A000A8F61 /* Repository.swift in Sources */,
 				C938B488274149D400B40F40 /* HistoryStorageable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

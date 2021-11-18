@@ -16,7 +16,7 @@ final class MemoRepository {
     }
 }
 
-extension MemoRepository: Repositoryable {
+extension MemoRepository: DataModifiableRepository {
     func add(memo: Memo, completion: @escaping (Result<Memo, Error>) -> Void) {
         memoStorage.create(memo: memo) { result in
             switch result {

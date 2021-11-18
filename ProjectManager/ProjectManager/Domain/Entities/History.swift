@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum UpdateType: String {
+enum UpdateType: String, Codable {
     case create = "생성"
     case delete = "삭제"
     case modify = "수정"
@@ -17,7 +17,7 @@ enum UpdateType: String {
     }
 }
 
-struct History: Identifiable {
+struct History: Identifiable, Codable {
     var id = UUID()
     var title = ""
     var date = Date()

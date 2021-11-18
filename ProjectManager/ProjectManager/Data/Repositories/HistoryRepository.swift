@@ -7,7 +7,8 @@
 
 import Foundation
 
-final class HistoryRepository: HistoryRepositoryable {
+final class HistoryRepository: DataGettableRepository {
+    typealias Entity = History
     private let historyStorage: HistoryStorageable
     
     init(historyStorage: HistoryStorageable = HistoryStorage()) {

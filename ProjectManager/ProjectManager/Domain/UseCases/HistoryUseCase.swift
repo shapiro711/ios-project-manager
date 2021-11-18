@@ -11,15 +11,15 @@ protocol HistoryUseCaseable {
     func fetch(completion: @escaping (Result<[History], Error>) -> Void)
 }
 
-struct HistoryUseCase: HistoryUseCaseable {
-    private let repository: HistoryRepositoryable
+class HistoricalUseCase<Repository: DataGettableRepository>: HistoryUseCaseable where Repository.Entity == History {
+    private let repository: Repository
     
-    init(repository: HistoryRepositoryable = HistoryRepository()) {
+    init(repository: Repository) {
         self.repository = repository
     }
     
-    func fetch(completion: @escaping (Result<[History], Error>) -> Void) {
-        repository.fetch { result in
+    func fetch(completion: @escaping (Result<[Repository.Entity], Error>) -> Void) {
+        repository.fetch { (result: Result<[Repository.Entity], Error>) in
             switch result {
             case .success(let histories):
                 completion(.success(histories))
@@ -27,5 +27,11 @@ struct HistoryUseCase: HistoryUseCaseable {
                 completion(.failure(error))
             }
         }
+    }
+}
+
+final class HistoryUseCase: HistoricalUseCase<HistoryRepository> {
+    override init(repository: HistoryRepository = HistoryRepository()) {
+        super.init(repository: repository)
     }
 }
