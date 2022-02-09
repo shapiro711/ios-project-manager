@@ -2,8 +2,7 @@
 
 - 프로젝트 진행 기간: 2021년 10월 25일 ~ 11월 19일   
 - 프로젝트 진행자: 🐶[Coden](https://github.com/ictechgy), 🤡[Shapiro](https://github.com/shapiro711)
-- 서포터: 🍉[수박](https://github.com/soo941226)
-
+- 
 &nbsp;   
 
 ## 프로젝트 설명
