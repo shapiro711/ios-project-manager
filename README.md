@@ -1,18 +1,19 @@
-#  프로젝트 매니저
+#  📝 프로젝트 매니저
 
 - 프로젝트 진행 기간: 2021년 10월 25일 ~ 11월 19일   
 - 프로젝트 진행자: 🐶[Coden](https://github.com/ictechgy), 🤡[Shapiro](https://github.com/shapiro711)
 
 &nbsp;   
 
-## 프로젝트 설명
+## 📚 프로젝트 설명
 프로젝트 진행 상황을 Todo, Doing, Done으로 나누어 관리하는 어플리케이션
    
 &nbsp;   
 
 ## 목차
-+ [실행 화면](#실행-화면)   
-+ [UML](#uml)   
++ [사용기술](#-사용-기술)
++ [실행 화면](#-실행-화면)   
++ [UML](#-uml)   
 + [주요 구현 사항](#주요-구현-사항)   
   1. [SwiftUI를 이용한 UI 구현](#1-swiftui를-이용한-ui-구현)   
       + [💫 TroubleShooting](#-swiftui-troubleshooting)   
@@ -25,8 +26,26 @@
   5. [Remote-Local 동기화](#5-remote-local-동기화)  
 
 &nbsp;
+
+## 🔖 프로젝트 진행 방식
+
+- 100% 페어 프로그래밍으로 진행
+
+&nbsp;
+
+## 🛠 사용 기술
+
+|구현 내용|도구|
+|:--:|:--:|
+|아키텍쳐|MVVM + Clean Architecture|
+|UI|SwiftUI|
+|로컬 데이터 저장소|CoreData|
+|원격 저장소|Firebase|
+|동시성 프로그래밍|GCD|
    
-## 실행 화면
+&nbsp;
+
+## 📱 실행 화면
 |상황|실행화면|
 |:--:|:--:|
 |메모 추가|<img width="500" alt="스크린샷 2021-10-22 오후 8 39 37" src="https://user-images.githubusercontent.com/39452092/140485980-fd9f00d4-3ae4-4bad-914e-6dbfd95713ff.gif">|
@@ -37,15 +56,13 @@
    
 &nbsp;   
    
-# UML
+# 🗺 UML
 
 ![https://user-images.githubusercontent.com/39452092/142631747-e8a978d9-ea52-4514-842e-071c4c62d2bc.png](https://user-images.githubusercontent.com/39452092/142631747-e8a978d9-ea52-4514-842e-071c4c62d2bc.png)
    
 &nbsp;   
    
 # 주요 구현 사항
-
-
 
 1. SwiftUI를 이용한 UI 구현
 2. MVVM + Clean Architecture 적용
