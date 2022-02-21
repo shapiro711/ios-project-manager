@@ -7,6 +7,12 @@
 
 ## 📚 프로젝트 설명
 프로젝트 진행 상황을 Todo, Doing, Done으로 나누어 관리하는 어플리케이션
+
+&nbsp;
+
+## 🔖 프로젝트 진행 방식
+
+- 100% 페어 프로그래밍으로 진행
    
 &nbsp;   
 
@@ -24,12 +30,6 @@
   4. [Firebase 구현](#4-firebase-구현)   
       + [💫 TroubleShooting](#-firebase-troubleshooting)   
   5. [Remote-Local 동기화](#5-remote-local-동기화)  
-
-&nbsp;
-
-## 🔖 프로젝트 진행 방식
-
-- 100% 페어 프로그래밍으로 진행
 
 &nbsp;
 
